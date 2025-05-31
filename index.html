@@ -73,16 +73,28 @@
       box-shadow: 0 0 20px #ff7777;
     }
 
-    .hidden-image {
+    .image-container {
       display: none;
-      margin-top: 1rem;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+
+    .image-container img {
       max-width: 90%;
       border-radius: 12px;
       box-shadow: 0 0 15px #000;
     }
 
+    .image-label {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #ffdddd;
+      text-shadow: 1px 1px 3px #000;
+    }
+
     .show {
-      display: block;
+      display: flex;
     }
   </style>
 </head>
@@ -92,13 +104,16 @@
   <div class="threat">Warning: Post ka sa akin kapag hindi ka tumupad 👾</div>
   <button id="threatBtn">Dare to click?</button>
 
-  <!-- Hidden image -->
-  <img id="scamImage" class="hidden-image" src="nj.jpg" alt="Funny Roblox Threat Image" />
+  <!-- Image + Label Container -->
+  <div id="imageContainer" class="image-container">
+    <img src="nj.jpg" alt="Funny Roblox Threat Image" />
+    <div class="image-label">Scammer</div>
+  </div>
 
   <script>
     document.getElementById('threatBtn').addEventListener('click', () => {
       alert("bff mag roblox tayo bukas post, bawal scammer");
-      document.getElementById('scamImage').classList.add('show');
+      document.getElementById('imageContainer').classList.add('show');
     });
   </script>
 </body>
